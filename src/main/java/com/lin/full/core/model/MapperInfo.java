@@ -1,4 +1,6 @@
-package com.lin.full.core;
+package com.lin.full.core.model;
+
+import com.lin.full.core.enumtype.QueryType;
 
 /**
  * @author lkmc2

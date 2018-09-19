@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1347808c-d6d7-4476-8096-b0f740103230" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/full/core/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlMappersHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/full/core/ConnectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlExecuteHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/full/core/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/full/core/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/full/core/MapperInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/full/core/model/MapperInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/full/core/QueryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/full/core/enumtype/QueryType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlMappersHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlMappersHolder.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,10 +22,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="MapperInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/MapperInfo.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/model/MapperInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="171">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="e#436#437#0" expanded="true" />
                 <element signature="e#468#469#0" expanded="true" />
@@ -49,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SqlMappersHolder.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SqlMappersHolder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlMappersHolder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="309">
+              <caret line="85" column="22" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2323#2324#0" expanded="true" />
@@ -64,10 +67,10 @@
         </entry>
       </file>
       <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/Config.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/config/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            <state relative-caret-position="133">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="e#488#489#0" expanded="true" />
                 <element signature="e#514#515#0" expanded="true" />
@@ -77,6 +80,32 @@
                 <element signature="e#646#647#0" expanded="true" />
                 <element signature="e#683#684#0" expanded="true" />
                 <element signature="e#716#717#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SqlExecuteHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlExecuteHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1210#1211#0" expanded="true" />
+                <element signature="e#1237#1238#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConnectionManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/ConnectionManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,10 +124,10 @@
         </entry>
       </file>
       <file leaf-file-name="QueryType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/QueryType.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/enumtype/QueryType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="22" />
+            <state relative-caret-position="133">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="e#210#211#0" expanded="true" />
                 <element signature="e#241#242#0" expanded="true" />
@@ -150,6 +179,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lin/full/core/MapperInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lin/full/core/Config.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlMappersHolder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlExecuteHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lin/full/core/ConnectionManager.java" />
       </list>
     </option>
   </component>
@@ -243,54 +274,6 @@
               <item name="lin" type="462c0819:PsiDirectoryNode" />
               <item name="full" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CustomMybatis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CustomMybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lin" type="462c0819:PsiDirectoryNode" />
-              <item name="simple" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CustomMybatis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CustomMybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lin" type="462c0819:PsiDirectoryNode" />
-              <item name="simple" type="462c0819:PsiDirectoryNode" />
-              <item name="executor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CustomMybatis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CustomMybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lin" type="462c0819:PsiDirectoryNode" />
-              <item name="simple" type="462c0819:PsiDirectoryNode" />
-              <item name="executor" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CustomMybatis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CustomMybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CustomMybatis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CustomMybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -405,7 +388,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537344132070</updated>
-      <workItem from="1537344139669" duration="8892000" />
+      <workItem from="1537344139669" duration="9835000" />
     </task>
     <task id="LOCAL-00001" summary="添加SQL执行器接口和实现类">
       <created>1537350661971</created>
@@ -477,11 +460,18 @@
       <option name="project" value="LOCAL" />
       <updated>1537355796030</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="添加SQL Mapper处理类SqlMappersHolder">
+      <created>1537357058186</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1537357058186</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8892000" />
+    <option name="totallyTimeSpent" value="9835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="713" y="0" width="734" height="907" extended-state="0" />
@@ -568,7 +558,8 @@
     <MESSAGE value="添加UserMapper接口和对应的xml文件" />
     <MESSAGE value="添加dom4j xml文件解析依赖" />
     <MESSAGE value="添加查询类型枚举和Mapper信息类" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加查询类型枚举和Mapper信息类" />
+    <MESSAGE value="添加SQL Mapper处理类SqlMappersHolder" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加SQL Mapper处理类SqlMappersHolder" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/execute.java">
@@ -713,10 +704,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/QueryType.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/simple/executor/impl/SimpleExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="22" />
+        <state relative-caret-position="513">
+          <caret line="63" column="101" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="101" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/enumtype/QueryType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="e#210#211#0" expanded="true" />
             <element signature="e#241#242#0" expanded="true" />
@@ -724,10 +725,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/MapperInfo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/model/MapperInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="171">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="e#436#437#0" expanded="true" />
             <element signature="e#468#469#0" expanded="true" />
@@ -753,20 +754,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/simple/executor/impl/SimpleExecutor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/config/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="63" column="101" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="101" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        <state relative-caret-position="133">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="e#488#489#0" expanded="true" />
             <element signature="e#514#515#0" expanded="true" />
@@ -782,12 +773,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlMappersHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="309">
+          <caret line="85" column="22" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2323#2324#0" expanded="true" />
             <element signature="e#2373#2374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlExecuteHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+            <element signature="e#1237#1238#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/ConnectionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

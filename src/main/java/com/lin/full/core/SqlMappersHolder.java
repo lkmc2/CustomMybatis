@@ -1,5 +1,8 @@
 package com.lin.full.core;
 
+import com.lin.full.core.config.Config;
+import com.lin.full.core.enumtype.QueryType;
+import com.lin.full.core.model.MapperInfo;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;

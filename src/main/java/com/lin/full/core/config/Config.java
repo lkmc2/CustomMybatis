@@ -1,4 +1,4 @@
-package com.lin.full.core;
+package com.lin.full.core.config;
 
 /**
  * @author lkmc2
