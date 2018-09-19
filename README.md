@@ -1,5 +1,5 @@
 # CustomMybatis
-一个自定义的自定义，可实现对MySQL数据库的增删改查功能。
+一个自定义的Mybatis，可实现对MySQL数据库的增删改查功能。
 
 ## 启动方式
 
