@@ -2,8 +2,14 @@ package com.lin.full.core;
 
 import com.lin.full.core.model.MapperInfo;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * @author lkmc2
@@ -23,6 +29,7 @@ public class SqlExecuteHandler implements InvocationHandler {
 
     /**
      * 获取Mapper信息
+     *
      * @param method 方法对象
      * @return Mapper信息
      */
@@ -32,10 +39,7 @@ public class SqlExecuteHandler implements InvocationHandler {
         String methodName = method.getName();
 
         // 根据接口名和方法名获取对应的Mapper信息
-        MapperInfo info = SqlMappersHolder.INSTANCE.getMapperInfo(
-                className,
-                methodName
-        );
+        MapperInfo info = SqlMappersHolder.INSTANCE.getMapperInfo(className, methodName);
 
         if (info == null) {
             throw new Exception(String.format("Mapper未找到该方法：%s.%s", className, methodName));
@@ -46,12 +50,150 @@ public class SqlExecuteHandler implements InvocationHandler {
 
     /**
      * 执行SQL
-     * @param info Mapper信息
-     * @param args SQL参数
+     *
+     * @param info   Mapper信息
+     * @param params SQL参数
      * @return 执行结果对象
      */
-    private Object executeSql(MapperInfo info, Object[] args) {
-        return null;
+    private Object executeSql(MapperInfo info, Object[] params) throws SQLException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        Object result = null;
+        // 获取数据库连接
+        Connection conn = ConnectionManager.getConnection();
+
+        // 获取Mapper信息中的SQL语句，并设置参数
+        PreparedStatement pstmt = conn.prepareStatement(info.getSql());
+        for (int i = 0; i < params.length; i++) {
+            pstmt.setObject(i + 1, params[i]);
+        }
+
+        // 根据查询类型处理
+        switch (info.getQueryType()) {
+            case SELECT: {
+                result = handleSelectEvent(pstmt, info);
+                break;
+            }
+            case INSERT: {
+                result = handleInsertEvent(pstmt, info);
+                break;
+            }
+            case UPDATE: {
+                break;
+            }
+            case DELETE: {
+                break;
+            }
+            default:
+                throw new RuntimeException("执行类型错误");
+        }
+
+        pstmt.close();
+        // 关闭数据库连接
+        ConnectionManager.close(conn);
+        return result;
+    }
+
+    /**
+     * 处理查询事件
+     *
+     * @param pstmt 查询状态
+     * @param info  Mapper信息
+     */
+    private Object handleSelectEvent(PreparedStatement pstmt, MapperInfo info) throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+        Object result = null;
+
+        // 执行SQL获取查询结果集合
+        ResultSet rs = pstmt.executeQuery();
+
+        // 移动到集合第一个元素
+        boolean hasResult = rs.first();
+
+        if (hasResult) {
+            // 将查询结果映射为基本类型（只支持int和String），或者指定Java类类型
+            if (rs.getMetaData().getColumnCount() == 1) {
+                switch (info.getResultType()) {
+                    case "int":
+                        result = rs.getInt(1);
+                        break;
+                    default:
+                        result = rs.getString(1);
+                }
+            } else {
+                // 获取返回结果的类型
+                Class<?> resultTypeClass = Class.forName(info.getResultType());
+
+                // 结果返回结果实例对象
+                Object obj = resultTypeClass.newInstance();
+
+                // 遍历返回结果类型中的属性
+                for (Field field : resultTypeClass.getDeclaredFields()) {
+                    // 获取Setter方法的名字
+                    String setterName = "set" + toTitle(field.getName());
+
+                    Method method;
+
+                    switch (field.getType().getSimpleName()) {
+                        case "int":
+                            method = resultTypeClass.getMethod(setterName, int.class);
+                            method.invoke(obj, rs.getInt(field.getName()));
+                            break;
+                        default:
+                            method = resultTypeClass.getMethod(setterName, String.class);
+                            method.invoke(obj, rs.getString(field.getName()));
+                    }
+                }
+                result = obj;
+            }
+        } else {
+            System.out.println("未查询到结果");
+        }
+
+        return result;
+    }
+
+    /**
+     * 将单词的首字母变成大写
+     */
+    private String toTitle(String word) {
+        return word.substring(0, 1).toUpperCase() + word.substring(1);
+    }
+
+    /**
+     * 处理插入事件
+     */
+    private int handleInsertEvent(PreparedStatement pstmt, MapperInfo info) throws SQLException {
+        return executeSqlWithHintInfo(pstmt, "插入");
+    }
+
+    /**
+     * 处理更新事件
+     */
+    private int handleUpdateEvent(PreparedStatement pstmt, MapperInfo info) throws SQLException {
+        return executeSqlWithHintInfo(pstmt, "更新");
+    }
+
+    /**
+     * 处理删除事件
+     */
+    private int handleDeleteEvent(PreparedStatement pstmt, MapperInfo info) throws SQLException {
+        return executeSqlWithHintInfo(pstmt, "删除");
+    }
+
+    /**
+     * 执行SQL，并进行提示
+     * @param pstmt 查询状态
+     * @param hintInfo 提示信息
+     * @return 受影响行数
+     */
+    private int executeSqlWithHintInfo(PreparedStatement pstmt, String hintInfo) throws SQLException {
+        int effectCount = pstmt.executeUpdate();
+
+        if (effectCount > 0) {
+            System.out.println(String.format("%s数据成功，受影响行数%d", hintInfo, effectCount));
+        } else {
+            System.out.println(String.format("%s数据失败", hintInfo));
+        }
+
+        return effectCount;
     }
 
 }
