@@ -27,6 +27,9 @@ public class Config {
     private String url = "jdbc:mysql://localhost:3306/mybatis_test?useSSL=false";
     private String username = "root";
     private String password = "123456";
+    
+    ......
+}
 ```
 
 3.运行MybatisStarter类的main方法。
