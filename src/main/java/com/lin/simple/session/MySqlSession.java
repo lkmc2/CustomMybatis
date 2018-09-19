@@ -1,8 +1,8 @@
-package com.lin.session;
+package com.lin.simple.session;
 
-import com.lin.executor.Executor;
-import com.lin.executor.impl.SimpleExecutor;
-import com.lin.proxy.MapperProxy;
+import com.lin.simple.executor.Executor;
+import com.lin.simple.executor.impl.SimpleExecutor;
+import com.lin.simple.proxy.MapperProxy;
 
 import java.lang.reflect.Proxy;
 

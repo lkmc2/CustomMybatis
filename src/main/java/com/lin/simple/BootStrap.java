@@ -1,8 +1,8 @@
-package com.lin;
+package com.lin.simple;
 
-import com.lin.entity.User;
-import com.lin.mapper.UserMapper;
-import com.lin.session.MySqlSession;
+import com.lin.simple.entity.User;
+import com.lin.simple.mapper.UserMapper;
+import com.lin.simple.session.MySqlSession;
 
 /**
  * @author lkmc2

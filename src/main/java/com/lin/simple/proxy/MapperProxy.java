@@ -1,7 +1,7 @@
-package com.lin.proxy;
+package com.lin.simple.proxy;
 
-import com.lin.mapper.UserMapperXml;
-import com.lin.session.MySqlSession;
+import com.lin.simple.mapper.UserMapperXml;
+import com.lin.simple.session.MySqlSession;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
