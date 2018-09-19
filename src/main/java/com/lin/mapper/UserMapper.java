@@ -1,6 +1,6 @@
-package com.lin.executor.mapper;
+package com.lin.mapper;
 
-import com.lin.executor.User;
+import com.lin.entity.User;
 
 /**
  * @author lkmc2

@@ -1,7 +1,7 @@
 package com.lin.executor.impl;
 
 import com.lin.executor.Executor;
-import com.lin.executor.User;
+import com.lin.entity.User;
 
 import java.sql.*;
 

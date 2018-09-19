@@ -1,4 +1,4 @@
-package com.lin.executor;
+package com.lin.entity;
 
 /**
  * @author lkmc2

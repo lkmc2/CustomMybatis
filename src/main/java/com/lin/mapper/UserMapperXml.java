@@ -1,4 +1,4 @@
-package com.lin.executor.mapper;
+package com.lin.mapper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ import java.util.Map;
 public class UserMapperXml {
 
     // 对应的Mapper接口名
-    public static final String mapperName = "com.lin.executor.mapper.UserMapper";
+    public static final String mapperName = "com.lin.mapper.UserMapper";
 
     // 接口方法和xml对应的查询语句的映射
     public static final Map<String, String> methodSqlMapping = new HashMap<>();
