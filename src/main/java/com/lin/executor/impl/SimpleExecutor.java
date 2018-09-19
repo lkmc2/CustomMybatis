@@ -21,15 +21,19 @@ public class SimpleExecutor implements Executor {
      */
     @SuppressWarnings("unchecked")
     public <E> E query(String sql, Object parameter) {
+        // 获取数据库连接
+        Connection conn = getConnection();
+
         try {
-            Connection conn = getConnection();
             PreparedStatement pstmt;
             pstmt = conn.prepareStatement(String.format(sql, Integer.parseInt(String.valueOf(parameter))));
 
+            // 执行SQL
             ResultSet rs = pstmt.executeQuery();
 
             User user = new User();
 
+            // 将查询结果设置到user对象
             while (rs.next()) {
                 user.setId(rs.getInt("id"));
                 user.setAge(rs.getInt("age"));
@@ -39,6 +43,12 @@ public class SimpleExecutor implements Executor {
             return (E) user;
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return null;
     }
@@ -51,7 +61,7 @@ public class SimpleExecutor implements Executor {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mybatis_test",
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mybatis_test?useSSL=false",
                     "root", "123456");
         } catch (Exception e) {
             e.printStackTrace();
