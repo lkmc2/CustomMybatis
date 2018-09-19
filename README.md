@@ -8,7 +8,7 @@
 
 1. 对Mapper接口和Mapper.xml文件进行扫描，存储接口和相关SQL属性到一个Map中。
 2. SqlSession使用动态代理，将Mapper接口信息传给代理对象Proxy。
-3. 代理对象Proxy从Map从Map获取该接口对应的查询语句，交给SqlSession。
+3. 代理对象Proxy从Map获取该接口对应的查询语句，交给SqlSession。
 4. SqlSession将查询语句交给Executor进行数据库查询，并获取返回的数据，交给Mapper接口。
 
 ## 启动方式
