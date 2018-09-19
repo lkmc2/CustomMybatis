@@ -8,6 +8,7 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.io.File;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,10 +27,16 @@ public enum SqlMappersHolder {
         mapperInfoMap = new HashMap<>();
 
         // 获取Mapper xml文件所在目录
-        File dir = new File(SqlMappersHolder.class
-                                            .getClassLoader()
-                                            .getResource(Config.DEFAULT.getMapperPath())
-                                            .getFile());
+        File dir = null;
+        try {
+            dir = new File(SqlMappersHolder.class
+                                                .getClassLoader()
+                                                .getResource(Config.DEFAULT.getMapperPath())
+                                                .toURI()
+                                                .getPath());
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
 
 
         //用dom4j解析UserMapper.xml文件

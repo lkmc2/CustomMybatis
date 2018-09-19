@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Arrays;
 
 /**
  * @author lkmc2
@@ -29,7 +30,6 @@ public class SqlExecuteHandler implements InvocationHandler {
 
     /**
      * 获取Mapper信息
-     *
      * @param method 方法对象
      * @return Mapper信息
      */
@@ -50,13 +50,14 @@ public class SqlExecuteHandler implements InvocationHandler {
 
     /**
      * 执行SQL
-     *
      * @param info   Mapper信息
      * @param params SQL参数
      * @return 执行结果对象
      */
     private Object executeSql(MapperInfo info, Object[] params) throws SQLException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-        Object result = null;
+        // 执行结果对象
+        Object result;
+
         // 获取数据库连接
         Connection conn = ConnectionManager.getConnection();
 
@@ -77,9 +78,11 @@ public class SqlExecuteHandler implements InvocationHandler {
                 break;
             }
             case UPDATE: {
+                result = handleUpdateEvent(pstmt, info);
                 break;
             }
             case DELETE: {
+                result = handleDeleteEvent(pstmt, info);
                 break;
             }
             default:
@@ -94,7 +97,6 @@ public class SqlExecuteHandler implements InvocationHandler {
 
     /**
      * 处理查询事件
-     *
      * @param pstmt 查询状态
      * @param info  Mapper信息
      */
@@ -129,16 +131,17 @@ public class SqlExecuteHandler implements InvocationHandler {
                     // 获取Setter方法的名字
                     String setterName = "set" + toTitle(field.getName());
 
-                    Method method;
+                    // 获取属性类型
+                    Class<?> fieldType = field.getType();
 
-                    switch (field.getType().getSimpleName()) {
-                        case "int":
-                            method = resultTypeClass.getMethod(setterName, int.class);
-                            method.invoke(obj, rs.getInt(field.getName()));
-                            break;
-                        default:
-                            method = resultTypeClass.getMethod(setterName, String.class);
-                            method.invoke(obj, rs.getString(field.getName()));
+                    // 获取Setter方法
+                    Method method = resultTypeClass.getMethod(setterName, fieldType);
+
+                    // 根据属性类型给Setter传参
+                    if ("Integer".equals(fieldType.getSimpleName())) {
+                        method.invoke(obj, rs.getInt(field.getName()));
+                    } else {
+                        method.invoke(obj, rs.getString(field.getName()));
                     }
                 }
                 result = obj;
@@ -161,39 +164,21 @@ public class SqlExecuteHandler implements InvocationHandler {
      * 处理插入事件
      */
     private int handleInsertEvent(PreparedStatement pstmt, MapperInfo info) throws SQLException {
-        return executeSqlWithHintInfo(pstmt, "插入");
+        return pstmt.executeUpdate();
     }
 
     /**
      * 处理更新事件
      */
     private int handleUpdateEvent(PreparedStatement pstmt, MapperInfo info) throws SQLException {
-        return executeSqlWithHintInfo(pstmt, "更新");
+        return pstmt.executeUpdate();
     }
 
     /**
      * 处理删除事件
      */
     private int handleDeleteEvent(PreparedStatement pstmt, MapperInfo info) throws SQLException {
-        return executeSqlWithHintInfo(pstmt, "删除");
-    }
-
-    /**
-     * 执行SQL，并进行提示
-     * @param pstmt 查询状态
-     * @param hintInfo 提示信息
-     * @return 受影响行数
-     */
-    private int executeSqlWithHintInfo(PreparedStatement pstmt, String hintInfo) throws SQLException {
-        int effectCount = pstmt.executeUpdate();
-
-        if (effectCount > 0) {
-            System.out.println(String.format("%s数据成功，受影响行数%d", hintInfo, effectCount));
-        } else {
-            System.out.println(String.format("%s数据失败", hintInfo));
-        }
-
-        return effectCount;
+        return pstmt.executeUpdate();
     }
 
 }

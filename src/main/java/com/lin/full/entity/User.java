@@ -7,18 +7,18 @@ package com.lin.full.entity;
  */
 public class User {
 
-    private Integer id;
-    private Integer age;
+    private int id;
+    private int age;
     private String name;
 
     public User() {
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

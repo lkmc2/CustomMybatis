@@ -14,7 +14,7 @@ public interface UserMapper {
      * @param id 用户id
      * @return id对应的用户
      */
-    User getUserInfo(int id);
+    User selectById(int id);
 
     /**
      * 更新用户名
@@ -32,5 +32,12 @@ public interface UserMapper {
      * @return 受影响行数
      */
     int insertUser(int id, int age, String name);
+
+    /**
+     * 根据id删除用户
+     * @param id 用户id
+     * @return 受影响行数
+     */
+    int deleteById(int id);
 
 }

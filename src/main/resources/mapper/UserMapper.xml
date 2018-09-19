@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <mapper namespace="com.lin.full.mapper.UserMapper">
 
-    <select id="getUserInfo" resultType="com.lin.simple.entity.User">
+    <select id="selectById" resultType="com.lin.simple.entity.User">
         select * from user
         where id = ?
     </select>
@@ -15,5 +15,10 @@
         insert into user
         values(?, ?, ?)
     </insert>
+
+    <delete id="deleteById">
+        delete from user
+        where id = ?
+    </delete>
 
 </mapper>
