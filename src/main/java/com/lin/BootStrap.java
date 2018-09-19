@@ -25,6 +25,12 @@ public class BootStrap {
         User user = userMapper.selectById(1);
 
         System.out.println(user);
+
+        /*
+            运行结果：
+            SQL [ select * from user where id = %d ], parameter [ 1 ]
+            User{id=1, age=18, name='Jack'}
+         */
     }
 
     public static void main(String[] args) {
