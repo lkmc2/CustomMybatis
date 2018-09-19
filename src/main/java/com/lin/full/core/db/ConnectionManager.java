@@ -1,4 +1,4 @@
-package com.lin.full.core;
+package com.lin.full.core.db;
 
 import com.lin.full.core.config.Config;
 

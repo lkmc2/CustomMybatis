@@ -1,4 +1,6 @@
-package com.lin.full.core;
+package com.lin.full.core.session;
+
+import com.lin.full.core.SqlMappersHolder;
 
 /**
  * @author lkmc2

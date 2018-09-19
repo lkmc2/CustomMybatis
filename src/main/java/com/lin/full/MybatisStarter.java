@@ -1,6 +1,8 @@
-package com.lin.full.core;
+package com.lin.full;
 
 
+import com.lin.full.core.session.SqlSession;
+import com.lin.full.core.session.SqlSessionFactory;
 import com.lin.full.mapper.UserMapper;
 import com.lin.simple.entity.User;
 

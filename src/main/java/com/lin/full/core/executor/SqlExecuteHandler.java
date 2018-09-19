@@ -1,5 +1,7 @@
-package com.lin.full.core;
+package com.lin.full.core.executor;
 
+import com.lin.full.core.SqlMappersHolder;
+import com.lin.full.core.db.ConnectionManager;
 import com.lin.full.core.model.MapperInfo;
 
 import java.lang.reflect.Field;
@@ -10,7 +12,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
 
 /**
  * @author lkmc2
