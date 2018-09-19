@@ -20,13 +20,9 @@ public enum SqlMappersHolder {
     INSTANCE;
 
     // 存储Mapper信息的Map
-    private Map<String, MapperInfo> mapperInfoMap = null;
+    private Map<String, MapperInfo> mapperInfoMap;
 
     SqlMappersHolder() {
-        if (mapperInfoMap == null) {
-            return;
-        }
-
         mapperInfoMap = new HashMap<>();
 
         // 获取Mapper xml文件所在目录
