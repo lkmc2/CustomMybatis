@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1347808c-d6d7-4476-8096-b0f740103230" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlExecuteHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlExecuteHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -82,8 +82,8 @@
       <file leaf-file-name="SqlExecuteHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlExecuteHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1601">
-              <caret line="197" column="4" lean-forward="true" selection-start-line="197" selection-start-column="4" selection-end-line="197" selection-end-column="4" />
+            <state relative-caret-position="285">
+              <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4686#4687#0" expanded="true" />
@@ -184,6 +184,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlMappersHolder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lin/full/core/ConnectionManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlExecuteHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlSession.java" />
       </list>
     </option>
   </component>
@@ -406,7 +407,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537344132070</updated>
-      <workItem from="1537344139669" duration="14251000" />
+      <workItem from="1537344139669" duration="14527000" />
     </task>
     <task id="LOCAL-00001" summary="添加SQL执行器接口和实现类">
       <created>1537350661971</created>
@@ -492,15 +493,21 @@
       <option name="project" value="LOCAL" />
       <updated>1537358003213</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="进一步完善SQL执行器的查询逻辑">
+      <created>1537367160529</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1537367160529</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14251000" />
+    <option name="totallyTimeSpent" value="14527000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="713" y="0" width="734" height="907" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="right" id="RestServices" />
@@ -526,7 +533,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32516128" />
       <window_info anchor="bottom" id="Terminal" weight="0.32903227" />
       <window_info anchor="bottom" id="MyBatis Sql Log" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.4718101" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4718101" />
       <window_info id="JRebel" side_tool="true" />
       <window_info anchor="right" id="BPMNPalette" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
@@ -585,7 +592,8 @@
     <MESSAGE value="添加查询类型枚举和Mapper信息类" />
     <MESSAGE value="添加SQL Mapper处理类SqlMappersHolder" />
     <MESSAGE value="添加SQL执行器和数据库连接控制器" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加SQL执行器和数据库连接控制器" />
+    <MESSAGE value="进一步完善SQL执行器的查询逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="进一步完善SQL执行器的查询逻辑" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/execute.java">
@@ -826,10 +834,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <folding>
+            <element signature="e#158#188#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/full/core/SqlExecuteHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1601">
-          <caret line="197" column="4" lean-forward="true" selection-start-line="197" selection-start-column="4" selection-end-line="197" selection-end-column="4" />
+        <state relative-caret-position="285">
+          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4686#4687#0" expanded="true" />
